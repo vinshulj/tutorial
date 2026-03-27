@@ -1,0 +1,6 @@
+{
+    {% for order in orders %}
+            "product_id": {{order.product}} ,
+            "User_id" : {{order.User}} ,
+            "quantity" : {{order.Quantity}} ,
+}

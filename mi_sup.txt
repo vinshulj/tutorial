@@ -1,0 +1,14 @@
+linear regration:- 
+-> small-midium size data,low-medium dimentionality ,linear,regretion
+asumption:- linearity,independence of error ,homoscedasticity,no multicolinearity
+pro. fast, easy to impliment ,low computational cost
+con. prone to overfitting for high dimention data, can not handle outlier,sparse data 
+
+logistic regration:-
+-> small to large data size, linear , sparse and high dimention,classification
+assumption:- independent feature,binary dependent,large sample size
+pro: work well with sparse data,very fast,probabilistic model
+cons. poor with non-linearity problem
+
+decision tree:-
+-> small-medium size data 

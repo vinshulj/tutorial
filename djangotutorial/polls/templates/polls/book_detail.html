@@ -1,0 +1,7 @@
+<h1>{{ authors.name }}</h1>
+{% for book in authors.book_set.all %}
+    <p>{{ book.title}}</p>
+    {% for user in book.sales_set.all %}
+        <li><a href="/polls/user/{{ user.user.id }}/">{{ user.user.name }}</a></li>
+    {% endfor %}
+{% endfor %}

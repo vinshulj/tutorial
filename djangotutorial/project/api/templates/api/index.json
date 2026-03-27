@@ -1,0 +1,5 @@
+{
+    {% for book in data %}
+        "title" : "{{book.title}}",
+        "price" : "{{book.price}}"
+}

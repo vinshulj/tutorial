@@ -1,0 +1,53 @@
+problem statement:-a binary classification problem where we have to predict the risk of an employee getting burn out risk
+column involve:- employee_id,name,age,job_title,stress level(scale (1 to 10)),no. of hour of sleep,work_hour,over_time,work_exp,salary,
+                    physical exsercies 
+
+2.problem aquasition:- diverse,relavence,quality,Quantity
+
+3.EDA:-identify outliers,error,distribution and relatioship , about data structure
+
+4. data cleaning:
+i. handling missing value
+ii. handling duplicates 
+iii. handaling outliers
+iv. handaling errors:- removeal of special charecter, white space, lower casing
+
+5.data transformation:- to make data usable , do not change feature mean ing
+it convert row data into sutable formate and scale so ml can learn it
+i. scaling
+ii. normalization 
+iii. adding logs transformation: to reduce skewness and handle non-linear
+iv. Encodimg
+v. text transformation
+vi. data/time transformation 
+
+6.feature engineering
+i. feature creation :- 
+domain-sepecific:- created based on industrial knowledge like bussiness rule  . eg:- burn_out_load=work_hour + 2*over_time , 
+                wellness_level= 1 for sleep>6 and 0 for sleep<6
+pattern-based/data driven-  salary growth=month salary/exp , aubsence_rate= leave/12
+synthetic:- Life_cycle Balance= sleep*physical_training
+
+
+ii feature transform:- to improve ml learning,modify and create column,it change the meaning
+a. convertes data into category
+b. log adding 
+c. polynomial feature
+
+iii. feature extraction:- it create a new feature   by trasforming data 
+a. dimensionality reduction technique:-pca 
+b. combining and aggregation
+
+iv. feture selection:- selecting the important feature from existing one 
+a. filter method
+b. wrapper method 
+c. embarding method
+
+v. feature scaling :- ensure all model contridute equally
+i. min-max scaling
+ii. Standarization
+
+7. model spliting
+
+
+skewness,how to solve skewness,empact of skewness, svm ,kernel=linear,polynomial,rdf . knn , decision tree, tuning , hyperparameters

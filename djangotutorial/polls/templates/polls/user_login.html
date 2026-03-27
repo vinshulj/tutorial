@@ -1,0 +1,9 @@
+<h2>{{ title }}</h2>
+<p>{{ subtitle }}</p>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+</form>
+<p><a href="{% url 'create-user' %}">Create a new user</a></p>
+

@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <h1> Product </h1>
+        <ul> 
+            {% for product in products %}
+            <li> {{product.Product_name}} </li>
+            <li> {{product.Fiber}} </li>
+            <li> {{product.Brand}} </li>
+            <li> {{product.Fashion}} </li>
+            <li> {{product.Price}} </li>
+            <li> {{product.Quantity_ava}} </li>
+            <li> {{product.Tax_per}} </li>
+            {% endfor %}
+        </ul>
+    </body>
+<html>
+

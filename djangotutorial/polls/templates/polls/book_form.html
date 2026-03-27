@@ -1,0 +1,16 @@
+<h2>Create Book</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.non_field_errors }}
+
+  {% for field in form %}
+    <div>
+      {{ field.label_tag }}
+      {{ field }}
+      {{ field.errors }}
+    </div>
+  {% endfor %}
+
+  <button type="submit">Save</button>
+</form>

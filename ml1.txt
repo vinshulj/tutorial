@@ -1,0 +1,543 @@
+#ML 
+Ml is a branch of ai that focus on deploying models and algorithms . so that computers can learn from data and solve the problem.
+rither hiving each task istruction.
+
+#type
+3 main 
+2 additional
+total 5
+ 
+(i) Supervised learning:- train model on lable dataset to classify and pridict unseen data.
+(ii) unsupervised learning:- train model on unlabeled dataset(by grouping and finding hidden parten) to classify and pridict
+(iii) Reinforcement learning:- train model on the bases of feedback. 
+                process:- input data->-> environment -> agent --> action --> rewards/penalties
+(iv) self supervised:- train model in a dataset where only data is given no lable and no answer provided. it create autogenerate its 
+own lable by the help of row data
+(v) semi-supervised Learning:- IT is a leaning in which small amount of data is labeled and remaining is unlabeled
+
+#Life cycle 
+1. problem defination
+2. data collection(it has this feature:-Relevance: Collect data should be relevant to the defined problem and include necessary features.
+    ,Quality: Ensure data quality by considering factors like accuracy and ethical use.
+    ,Quantity: Gather sufficient data volume to train a robust model.
+    ,Diversity: Include diverse datasets to capture a broad range of scenarios and patterns.)
+3 data cleaning and preprocessing
+    a.Data Cleaning: Address issues such as missing values, outliers and inconsistencies in the data.
+    b.Data Preprocessing: Standardize formats, scale values and encode categorical variables for consistency.
+    c.Data Quality: Ensure that the data is well-organized and prepared for meaningful analysis.
+4 EDA(Exploratery data analysis)(used to uncover insight,patters,trends and understand the dataset structure)
+5. Feature Engineering and Selection: it is a process which involve selecting only important feature to enhence model efficiency 
+    and reduce dimensionality
+    a. Feature Engineering: Create new features or transform existing ones to capture better patterns and relationships.
+    b. Feature Selection: Identify subset of features that most significantly impact the model's performance.
+    c. Domain Expertise: Use domain knowledge to engineer features that contribute meaningfully for prediction.
+    d. Optimization: Balance set of features for accuracy while minimizing computational complexity.
+6.Model Selection: step to remember while selecting:
+    *Complexity: Consider the complexity of the problem and the nature of the data when choosing a model.
+    *Decision Factors: Evaluate factors like performance, interpretability and scalability when selecting a model.
+    *Experimentation: Experiment with different models to find the best fit for the problem.
+7. Model Training:- exposing historical data allowing it learn patterns,relationship and dependence
+8. Model Evaluation and Tuning:- step to do:
+    *Evaluation Metrics: Use metrics like accuracy, precision, recall and F1 score to evaluate model performance.
+    *Strengths and Weaknesses: Identify the strengths and weaknesses of the model through rigorous testing.
+    *Iterative Improvement: Initiate model tuning to adjust hyperparameters and enhance predictive accuracy.
+    *Model Robustness: Iterative tuning to achieve desired levels of model robustness and reliability.
+9. Model deployment
+10. Maintanance and feedback
+
+
+
+# Supervised Learning
+-> it mainly categories into two main type:
+
+(i) Classification: here goal is to pridict descrite lables or categories data .
+    in terms of ml ,classification is a process of storing value into categories
+    # Types
+    (a) binary
+    (b) Multi-class
+    (c) Multi-lables: single piece of data categories into multiple labels(like:-In Movie recommendation a single movie is in action 
+    or comady categories)
+    #Working of classification problem
+    (a) data collection
+    (b) feature extraction
+    (c) model Selection
+    (d) model training
+    (e) prediction
+    (e) model Evaluation
+    (f) model deployment
+    #Classification algorithms
+    1. Linear Classifiers: Linear classifier models create a linear decision boundary between classes. They are simple and 
+    computationally efficient. Some of the linear classification models are as follows: 
+        (a)Logistic Regression
+        (b)Support Vector Machines having kernel = 'linear'
+        (c)Single-layer Perceptron
+        (d)Stochastic Gradient Descent (SGD) Classifier
+    2.Non-linear Classifiers: Non-linear models create a non-linear decision boundary between classes. They can capture more complex 
+    relationships between input features and target variable. Some of the non-linear classification models are as follows:
+    (a)K-Nearest Neighbours
+    (b)Kernel SVM
+    (c)Naive Bayes
+    (d)Decision Tree Classification
+    (e)Ensemble learning classifiers: 
+    (f)Random Forests, 
+    (g)AdaBoost, 
+    (h)Bagging Classifier, 
+    (i)Voting Classifier, 
+    (j)Extra Trees Classifier
+    (k)Multi-layer Artificial Neural Networks
+
+
+(ii) Regression: it aim to pridict continuous numarical value by learning relationships between input variable(feature) and 
+    output variable(target value)
+
+
+
+
+
+
+### Logistic Regression
+it a supervised learning algorithm.
+use to solve classification problem.
+it pridicts the probability that an input belong to the sepecific class.
+use sigmoid s-curve
+
+##types
+(i) binominal Logistic Regression :- 0/1 , true/false ,spam/not spam
+(ii)Multinominal Logistic Regression:- three or more possibility
+(iii) Ordinal Logistic Regression:- This type applies when the dependent variable has three or more categories with a natural 
+     order or ranking. 
+
+##assumptions
+(i) indepentent observation:- means it assume that each input is indepentent to its other input points 
+(ii) binary dependence variable:- it assume that dependent variable must be binary. note:-for more then two it use softmax function
+(iii)Linear relationship between dependent variable and indepentent log odds of the dependent variable.
+notes:
+*(iv) no outliers
+*(v) large sample size
+
+**understand sigmoid function
+it convert row output into probability value between 0 and 1.
+threshold value is > 0.5 class1
+threshold value is < 0.5 class0
+σ(z)= 1/1+e(-z)
+
+### Linear Regression
+it is a supervised learning algorithm.
+use to solve regression problem.
+assume a linear relationship between input and output variable.
+The goal of linear regression is to find a straight line that minimizes the error (the difference) between the observed data points 
+    and the predicted values. This line helps us predict the dependent variable for new, unseen data.
+
+eq of best fit line:- y=mx+c
+formula:- y=θ(0)+θ(1)x #for straight line
+          y=θ(0)+θ(0)x(0)+.....+θ(n)x(n) #for multiple linear regression
+
+
+### Decision Tree
+it is a supervised learning .
+can solve both regression as well as classification problem.
+It has a hierarchical tree structure which consists of a root node, branches, internal nodes and leaf nodes. 
+It works like a flowchart help to make decisions step by step where:
+(i)Internal nodes represent attribute tests
+(ii)Branches represent attribute values
+(iii)Leaf nodes represent final decisions or predictions.
+
+###SVM (Support Vector machine)
+supervised learning method.
+can solve both regression as well as classification problem.
+It tries to find the best boundary known as hyperplane that separates different classes in the data. 
+It is useful when you want to do binary classification like spam vs. not spam or cat vs. dog.
+Note:- it egnore the outliers
+
+###Key Concepts of Support Vector Machine
+Hyperplane: A decision boundary separating different classes in feature space and is represented by the equation 
+wx + b = 0 in linear classification.
+Support Vectors: The closest data points to the hyperplane, crucial for determining the hyperplane and margin in SVM.
+Margin: The distance between the hyperplane and the support vectors. SVM aims to maximize this margin for better classification 
+performance.
+Kernel: A function that maps data to a higher-dimensional space enabling SVM to handle non-linearly separable data.
+Hard Margin: A maximum-margin hyperplane that perfectly separates the data without misclassifications.
+Soft Margin: Allows some misclassifications by introducing slack variables, balancing margin maximization and misclassification 
+penalties when data is not perfectly separable.
+C: A regularization term balancing margin maximization and misclassification penalties. A higher C value forces stricter penalty 
+for misclassifications.
+Hinge Loss: A loss function penalizing misclassified points or margin violations and is combined with regularization in SVM.
+Dual Problem: Involves solving for Lagrange multipliers associated with support vectors, facilitating the kernel trick and 
+efficient computation.
+
+#Naive Bayes classification
+It is named as "Naive" because it assumes the presence of one feature does not affect other features. 
+The "Bayes" part of the name refers to its basis in Bayes’ Theorem.
+
+it is supervised leaning algorithm.
+can solve classification problem only.
+
+
+##assumptions in it
+(i) feature indepentent
+(ii)continuous features are normally distributed
+(iii)Discrete features have multinomial distributions
+(iv)Discrete features have multinomial distributions
+(v)Features are equally important
+(vi)no missing value
+
+#Bayes Theorem
+P(y∣X)= P(X∣y)⋅P(y)/P(X)
+
+#Random Forest Algorithm in Machine Learning
+Random Forest is a machine learning algorithm that uses many decision trees to make better predictions. 
+Each tree looks at different random parts of the data and their results are combined by voting for classification or 
+averaging for regression which makes it as ensemble learning technique. This helps in improving accuracy and reducing errors.
+​
+
+1. Linear Models
+1. Linear Regression
+Use when
+
+Data size: Small → Medium
+
+Features: Low–Medium dimensional
+
+Relationship: Linear
+
+Noise: Moderate
+
+Interpretability required ✅
+
+Data type
+
+Dense data
+
+No strong multicollinearity
+
+Assumptions
+
+Linearity
+
+Independence
+
+Homoscedasticity
+
+Normal error distribution
+
+Pros
+
+Fast, simple, interpretable
+
+Low computational cost
+
+Cons
+
+Fails on non-linear patterns
+
+Sensitive to outliers
+
+2. Logistic Regression
+Use when
+
+Classification (binary / multiclass)
+
+Data size: Small → Large
+
+Features: High-dimensional & sparse
+
+Decision boundary: Linear
+
+Data type
+
+Sparse (text, TF-IDF)
+
+High-dimensional
+
+Assumptions
+
+Linear separability (log-odds)
+
+Independent features
+
+Pros
+
+Very fast
+
+Works well with sparse data
+
+Probabilistic output
+
+Cons
+
+Poor for complex non-linear boundaries
+
+3. Ridge / Lasso / ElasticNet
+Use when
+
+High dimensional data
+
+Multicollinearity exists
+
+Feature selection needed (Lasso)
+
+Data size
+
+Small → Medium
+
+Assumptions
+
+Same as linear regression
+
+Pros
+
+Controls overfitting
+
+Handles correlated features
+
+Cons
+
+Still linear
+
+2. Tree-Based Models
+4. Decision Tree
+Use when
+
+Data size: Small → Medium
+
+Data type: Mixed (numeric + categorical)
+
+Relationship: Highly non-linear
+
+Interpretability needed
+
+Assumptions
+
+No data distribution assumptions
+
+Pros
+
+Easy to explain
+
+Handles missing values
+
+Captures non-linearity
+
+Cons
+
+Overfitting
+
+Unstable (high variance)
+
+5. Random Forest
+Use when
+
+Data size: Medium → Large
+
+Features: Medium dimensional
+
+Non-linear interactions
+
+Want strong baseline model
+
+Assumptions
+
+Minimal assumptions
+
+Pros
+
+Reduces overfitting
+
+Robust to noise
+
+Handles non-linear data well
+
+Cons
+
+Slower than linear models
+
+Poor with very sparse/high-dim data
+
+6. Gradient Boosting (XGBoost, LightGBM, CatBoost)
+Use when
+
+Structured/tabular data
+
+Data size: Medium → Very Large
+
+Complex non-linear relationships
+
+High accuracy required
+
+Assumptions
+
+Weak learners improve iteratively
+
+Pros
+
+State-of-the-art for tabular data
+
+Handles missing values
+
+Captures complex patterns
+
+Cons
+
+Hyperparameter sensitive
+
+Slower to train
+
+3. Distance-Based Models
+7. K-Nearest Neighbors (KNN)
+Use when
+
+Data size: Small
+
+Dimensionality: Low
+
+Clear distance metric
+
+Non-linear patterns
+
+Assumptions
+
+Similar points → similar labels
+
+Pros
+
+Simple
+
+No training phase
+
+Cons
+
+Very slow for large data
+
+Fails in high-dimensional data (curse of dimensionality)
+
+8. Support Vector Machine (SVM)
+Use when
+
+Data size: Small → Medium
+
+High dimensional data
+
+Clear margin of separation
+
+Non-linear patterns (kernel trick)
+
+Assumptions
+
+Data is separable (soft margin allowed)
+
+Pros
+
+Excellent for high-dim data
+
+Robust to overfitting
+
+Cons
+
+Slow for large datasets
+
+Hard to tune kernels
+
+4. Probabilistic Models
+9. Naive Bayes
+Use when
+
+Data size: Small → Large
+
+Extremely high-dimensional
+
+Sparse data (text, NLP)
+
+Real-time prediction required
+
+Assumptions
+
+Feature independence ❌ (strong assumption)
+
+Pros
+
+Extremely fast
+
+Works surprisingly well for text
+
+Cons
+
+Poor if features are highly correlated
+
+5. Neural Networks
+10. Artificial Neural Network (ANN)
+Use when
+
+Data size: Large
+
+Complex non-linear relationships
+
+Feature engineering difficult
+
+Assumptions
+
+Data contains hidden non-linear patterns
+
+Pros
+
+Very powerful
+
+Handles complex interactions
+
+Cons
+
+Requires large data
+
+Low interpretability
+
+High computational cost
+
+11. CNN / RNN / LSTM
+Use when
+
+CNN → Images, spatial data
+
+RNN/LSTM → Sequential/time-series/text
+
+Data size: Very Large
+
+Pros
+
+Best for unstructured data
+
+Cons
+
+Heavy compute
+
+Hard to tune
+
+6. Quick Selection Cheat Sheet
+Scenario	Best Choice
+Small + Linear	Linear / Logistic
+High-dim sparse text	Naive Bayes / Logistic
+Non-linear + small	SVM / Decision Tree
+Non-linear + medium	Random Forest
+Best tabular accuracy	XGBoost / LightGBM
+Very large + deep patterns	Neural Networks
+Low data + interpretability	Decision Tree
+7. Interview Rule of Thumb (VERY IMPORTANT)
+Start simple → increase complexity only if needed
+
+Logistic / Linear
+
+Tree
+
+Random Forest
+
+Boosting
+
+Neural Networks
+
+If you want, I can also provide:
+
+🔹 Flowchart for algorithm selection
+
+🔹 Real-world examples (banking, NLP, vision)
+
+🔹 Interview-ready one-page PDF
+
+🔹 Math

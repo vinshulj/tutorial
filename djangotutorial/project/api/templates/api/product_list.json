@@ -1,0 +1,10 @@
+{
+    {% for product in products %}
+            "Product_name": {{product.Product_name}} ,
+            "Fiber" : {{product.Fiber}} ,
+            "Brand" : {{product.Brand}} ,
+            "Fashion" : {{product.Fashion}} ,
+            "Price" : {{product.Price}} ,
+            "Quantity_ava" : {{product.Quantity_ava}} ,
+            "Tax_per": {{product.Tax_per}},
+}

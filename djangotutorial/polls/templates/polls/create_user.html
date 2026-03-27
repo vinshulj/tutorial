@@ -1,0 +1,9 @@
+<h1>{{title}}</h1>
+<p>{{subtitle}}</p>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}                                                 
+    <button type="submit">Create User</button>
+</form>
+<p><a href="{% url 'user-login' %}">Back to Login</a></p>
+{% comment %} <p><a href="{% url 'update-user' %}">Back to update</a></p> {% endcomment %}

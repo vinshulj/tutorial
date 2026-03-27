@@ -1,0 +1,10 @@
+<ol>
+    {% for book in books %}
+        <li>{{ book.title }} </li>
+        <ul>
+            <li>Author:{{book.author.name}}</li>
+            <li>Sales:{{book.total_sales}}</li>
+            <li><a href="/polls/books/{{book.id}}/">Customers details</a></li>
+        </ul>
+    {% endfor %}
+</ol>

@@ -1,0 +1,154 @@
+get started with django rest framework?
+what is rest?
+Django rest framework?
+api?type of api? 1. by access(Public,private,patner,composite) 2 by tecnology(rest api(http), soap api
+xml, GraphQL(single endpoint,specific data), gRPC API(FAST) )
+API Component(endpoint(address), http method,request,response,data formate,authentication and authorization,docummentation, rate limiting)
+what is api_view?
+serializer(translator)? 
+modelSerializer vs Serializer?
+modelField vs Serializerfield?
+
+#api_view
+ api_view is the part of api_view i.e it create the api_view to convert the function into ApiView class 
+ WrappedAPIView = type(
+    'WrappedAPIView',
+    (APIView,),
+    {'__doc__': func.__doc__}
+) #Create a class dynamically
+ type(class_name, bases, namespace_dict)
+
+
+ setattr(WrappedAPIView, method.lower(), handler) ->setattr(object, attribute_name, value)->object.attribute_name = value
+
+ WrappedAPIView.renderer_classes = getattr(func, 'renderer_classes',APIView.renderer_classes)->getattr(object, attribute_name, 
+ default_value) # if you want to change use @renderer_classes([JSONRenderer]) -> common render class are JSONRenderer,BrowsableAPIRenderer
+TemplateHTMLRenderer but by default_value for APIView is JSONRenderer
+
+@parse_class([])
+Parser Classes : taking the raw data from an incoming HTTP request and converting it into a usable Python data type
+# from rest_framework.parsers import (
+    JSONParser, #convert JSON → Python dict
+    FormParser, #Converts form data → QueryDict
+    MultiPartParser # uploads files
+)
+
+Authentication Classes: Authentication checks request credentials #at start
+from rest_framework.authentication import (
+    note: all authentication are in order if one met the requierdment other stop
+    SessionAuthentication, # meaning SessionAuthentication checks whether the user is logged in via Django’s session system \
+                            (cookie-based login(like user id)).
+                            1 Uses Django login session
+                            2 Works with browser login
+                            3 Good for admin / browsable API
+    BasicAuthentication, # meaning BasicAuthentication checks username and password sent in the HTTP Authorization header on every request.
+                            #Username + password in header
+                            Base64 encoded
+                            Mostly testing
+    TokenAuthentication #TokenAuthentication authenticates a user using a unique token sent in the request header instead of username/password.
+                        #Uses token key
+)
+ 
+Throttle Classes: throttle_classes limits how many requests a client can make to an API within a given time period.
+Note: Throttle class needs rate defined in settings. 
+        Ex:REST_FRAMEWORK = {
+        "DEFAULT_THROTTLE_RATES": {
+        "user": "100/min",
+        "anon": "20/min"
+    }
+}
+
+from rest_framework.throttling import (
+    UserRateThrottle, # authenticated user
+    AnonRateThrottle, # AnonRateThrottle limits request rate for users who are NOT authenticated.
+    ScopedRateThrottle # ScopedRateThrottle allows you to set different request limits for different API views (scopes).
+    who? 1. Enable:
+     REST_FRAMEWORK = {
+    "DEFAULT_THROTTLE_CLASSES": [
+        "rest_framework.throttling.ScopedRateThrottle"
+    ],
+    2. REST_FRAMEWORK = {
+    "DEFAULT_THROTTLE_RATES": {
+        "login": "5/min",
+        "search": "100/min",
+        "reports": "10/hour",
+    }}}
+
+permissions:
+from rest_framework.permissions import (
+    AllowAny, #Anyone can access
+    IsAuthenticated,# Only logged-in users allowed
+    IsAdminUser,#Only staff/admin users allowed
+    IsAuthenticatedOrReadOnly #GET → allowed for all
+                               POST/PUT/DELETE → login required
+)
+schema class:
+
+A schema class in DRF is used to automatically describe your API endpoints — for documentation and API specs (like OpenAPI / Swagger).
+Schema = API blueprint
+it answer:- 
+What endpoints exist?
+What methods do they support?
+What parameters are required?
+What request/response format is expected?
+
+By default DRF uses:rest_framework.schemas.openapi.AutoSchema
+
+## Function base view in rest_framework?
+    Q. method,attribute(no), mata classes(no) in fvb
+    1.method(one request.method (for logic building))
+    2. Decorator are all those which are in api_view()
+
+
+## fvb return Response
+
+# so now Response :send API responses back to the client.
+1. parameters 
+    self, 
+    data=None, #Main response content — what you want to send back. could be list,dict,serializer.data,error dict(serializer.error)
+    status=None,#HTTP status code
+    template_name=None, 
+    headers=None,
+    exception=False, 
+    content_type=None
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3MTQ4MjQzNywiaWF0IjoxNzcxMjIzMjM3LCJqdGkiOiIzNzQ4YWQzMTI4OTg0MTYxYTA3OTJhNDU2MTVjMTFiMCIsInVzZXJfaWQiOiIxNCJ9.VGr54OTnybuDZSoekf_MJd8qEBULFAlwjRAGPoXqktw
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3MTQ4MjQzNywiaWF0IjoxNzcxMjIzMjM3LCJqdGkiOiIzNzQ4YWQzMTI4OTg0MTYxYTA3OTJhNDU2MTVjMTFiMCIsInVzZXJfaWQiOiIxNCJ9.VGr54OTnybuDZSoekf_MJd8qEBULFAlwjRAGPoXqktw",
+
+
+class LoginView(APIView):
+    def post(self, request, *args, **kwargs):
+        serializer = UserLoginSerializer(data=request.data)
+        if serializer.is_valid():
+            address_list = UserAddressList.objects.filter(user__username=request.data["username"])
+            if not address_list:
+                empty_address = UserAddressList(user=User.objects.get(username=request.data["username"]))
+                empty_address.save()
+                address_list = UserAddressList.objects.filter(user__username=request.data["username"])
+            return Response({"message": "Login successful", "address_list": address_list.values()}, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def put(self, request, *args, **kwargs):
+        serializer = UserLoginSerializer(data=request.data)
+        if serializer.is_valid():
+            address_instance = UserAddressList.objects.get(user__username=request.data.get('username'))
+            serializer=UserAddressListSerializer(address_instance, data=request.data)    
+            if serializer.is_valid():    
+                serializer.save()                           
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def patch(self, request, *args, **kwargs):
+        serializer = UserLoginSerializer(data=request.data)
+        if serializer.is_valid():
+            address_instance = UserAddressList.objects.get(user__username=request.data.get('username'))
+            serializer = UserAddressListSerializer(
+                address_instance, 
+                data=request.data, 
+                partial=True
+            )
+            if serializer.is_valid():
+                serializer.save() 
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

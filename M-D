@@ -1,0 +1,72 @@
+added
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Changes to be committed:
+#	new file:   djangotutorial/polls/urls.py
+#
+# Untracked files:
+#	Django/
+#	Error.py
+#	String.py
+#	__pycache__/
+#	a_notes.txt
+#	c
+#	class.py
+#	clouser.py
+#	datatype.py
+#	datetime2.py
+#	decorator.py
+#	demofile2.txt
+#	dfewqw
+#	dictionary.py
+#	dictionary_com.py
+#	djangotutorial/().py
+#	djangotutorial/db.sqlite3
+#	djangotutorial/manage.py
+#	djangotutorial/my/
+#	djangotutorial/polls/__init__.py
+#	djangotutorial/polls/__pycache__/
+#	djangotutorial/polls/admin.py
+#	djangotutorial/polls/apps.py
+#	djangotutorial/polls/forms.py
+#	djangotutorial/polls/migrations/
+#	djangotutorial/polls/models.py
+#	djangotutorial/polls/templates/
+#	djangotutorial/polls/tests.py
+#	djangotutorial/polls/views.py
+#	djangotutorial/project/
+#	djangotutorial/protgressintro/
+#	dum.txt
+#	dum1/
+#	dummy.py
+#	dummy_file.txt
+#	error.py
+#	file.py
+#	function.py
+#	generator.py
+#	gil.py
+#	html/
+#	iterator.py
+#	library.py
+#	list comprihension.py
+#	list.py
+#	mi_sup.txt
+#	ml.txt
+#	ml1.txt
+#	ml_workflow.txt
+#	oops.py
+#	page.html
+#	pandas.ipynb
+#	pandas/
+#	practice.py
+#	product/
+#	project.py
+#	project2.py
+#	project3.py
+#	property_decorator.py
+#	question.txt
+#	regex.py
+#	set.py
+#

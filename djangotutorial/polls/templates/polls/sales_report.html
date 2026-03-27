@@ -1,0 +1,14 @@
+<h1 style="text-align:center;"> {{title}}</h1>
+<ul>
+    {% for sale in sales %}
+        <h2>book-title: {{sale.book}}, sales-date: {{sale.sale_date}}</h2>
+        <h3>Details:</h3>
+        <ul>
+            <li>user name: {{sale.user.name}}</li>
+            <li>quantity: {{sale.quantity}}</li>
+            <li>price: {{sale.price}}</li>
+            <li>Author: {{sale.book.author}}</li>
+            <li>review: {{sale.user.about}}</li>
+        </ul>
+    {% endfor %}
+</ul>

@@ -1,0 +1,9 @@
+{
+    "name": "abc.json",
+    "content": """
+{
+    "name": "{{ user.name }}",
+    "age": {{ user.age }},
+    "about": "{{ user.about }}",
+    "price_of_book_bought": {{ user.sales.price }}
+}

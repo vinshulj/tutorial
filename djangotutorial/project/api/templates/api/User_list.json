@@ -1,0 +1,7 @@
+{
+    {% for user in users %}
+            "User_name": {{user.User_name}} ,
+            "User_id" : {{user.User_id}} ,
+            "Age" : {{user.Age}} ,
+            "Contact_info" : {{user.Contact_info}} ,
+}

@@ -1,0 +1,7 @@
+<title>{{ title }}</title>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+<p><a href="{% url 'author-list' %}">Back to Author List</a></p>

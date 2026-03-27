@@ -1,0 +1,12 @@
+types of ml,
+ml workflow,
+Linear regression,
+Logistic regression,
+Decision tree,
+SVM,
+Ridge regression,
+Lasso regression,
+ElasticNet,
+Regularization in Machine Learning,
+Confusion Matrix,
+Precision, Recall and F1-Score

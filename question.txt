@@ -1,0 +1,40 @@
+What problem does encapsulation solve at runtime, and how is it enforced in Python?
+
+sol. encapsulation means rapping up of data. it introduce the probability of data huiding in program. we can enforce it by __ for 
+private _ for protected and varible=value for public. allthough we cannot achive the protected as it is not possible and we can thing 
+as a developer we should not access _ varible. we can also access private element by obj/class_name.__var. there is another method by 
+which we can accive encapsulation which is clouser 
+
+How does method overriding differ from method overloading, and how does Python handle both?
+sol. method overriding is the process in which we create multiple method with same name and python overwrite it again and again without 
+even accessing it.it is genrally seen in inheritence. method overloading is the process by which we provide new functionality to 
+the in-built method . by updating the inbuilt property
+
+What is the role of super() in multiple inheritance, and how does MRO affect it?
+sol. super() key help us to inharit parent constucter,it help to increase reuability 
+
+
+Composition in OOP
+
+Definition:
+Composition is a design principle where a class contains objects of other classes to achieve functionality, instead of inheriting 
+from them.
+
+Think of it as a “has-a” relationship.
+
+Example: A Car has an Engine.
+
+It allows flexibility, reusability, and looser coupling between classes.
+
+Changes in one class don’t break others as easily (unlike deep inheritance).
+
+Quick comparison:
+Concept	Relationship	Example
+Inheritance	is-a	Car is a Vehicle
+Composition	has-a	Car has a Engine
+67
+234
+Q1 static method and dinamic mathod?
+note:The rationale for the order of application (bottom to top) is that it matches the usual order for function-application.
+ In mathematics, composition of functions (g o f)(x) translates to g(f(x)). In Python, @g @f def foo() translates to foo=g(f(foo).
+ TTT TTT TT tt ttt ttttt kdtt dktts What
