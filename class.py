@@ -254,6 +254,6 @@ def cause_to_make_sound(entity):
 # Both work because they have a make_sound() method
 cause_to_make_sound(Duck()) # Output: Quack, quack!
 cause_to_make_sound(Dog())  # Output: Woof, woof!
-
+#vjfjvijvijv
 # This would cause an AttributeError at runtime because a Plane has no make_sound()
 # cause_to_make_sound(Plane())
